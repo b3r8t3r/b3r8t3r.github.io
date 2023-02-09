@@ -1,0 +1,28 @@
+/*
+------------------------------------------
+  The elements are arranged horizontally
+------------------------------------------
+*/
+.card {
+    width: 45vw;
+    min-height: 20vh;
+    min-width: 30em;
+}
+
+ul {
+    display: flex;
+    gap: 4vw;
+}
+
+ul li::before {
+    inset: 6vh;
+    box-shadow: 0 0 0 1.5vh var(--clr), 0 0 0 3vh var(--bgbright), 0 0 0 3.4vh var(--clr);
+}
+
+ul li a {
+    font-size: 7vh;
+}
+
+ul li:hover a {
+    font-size: 13vh;
+}

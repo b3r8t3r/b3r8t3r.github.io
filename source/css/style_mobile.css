@@ -1,0 +1,30 @@
+/*
+------------------------------------------
+  The elements are arranged vertically
+------------------------------------------
+*/
+.card {
+    min-width: 20vw;
+    min-height: 70vh;
+}
+
+ul {
+    top: 33vh;
+    left: 13vw;
+}
+
+ul li {
+    margin: 5vh 5vh 0 0;
+}
+
+ul li::before {
+    box-shadow: 0 0 0 1.5vw var(--clr), 0 0 0 3vw var(--bgbright), 0 0 0 3.4vw var(--clr);
+}
+
+ul li a {
+    font-size: 10vw;
+}
+
+ul li:hover a {
+    font-size: 13vw;
+}

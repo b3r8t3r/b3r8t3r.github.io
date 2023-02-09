@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --bgdark: #0d0d0d;
+    --bgbright: #212121;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: var(--bgdark);
+    overflow: hidden;
+}
+
+/*
+==========================================
+    Background effects
+==========================================
+*/
+.glowing {
+    z-index: -1;
+    position: relative;
+    min-width: 750px;
+    height: 750px;
+    margin: -150px;
+    transform-origin: right;
+    animation: colorChange 5s linear infinite;
+}
+
+.glowing:nth-child(even) {
+    transform-origin: left;
+}
+
+@keyframes colorChange {
+    0% {
+        filter: hue-rotate(0deg);
+        transform: rotate(0deg);
+    }
+
+    0% {
+        filter: hue-rotate(360deg);
+        transform: rotate(360deg);
+    }
+}
+
+.glowing span {
+    position: absolute;
+    top: calc(80px * var(--i));
+    bottom: calc(80px * var(--i));
+    left: calc(80px * var(--i));
+    right: calc(80px * var(--i));
+}
+
+.glowing span::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: -8px;
+    width: 15px;
+    height: 15px;
+    background: #f00;
+    border-radius: 50%;
+}
+
+.glowing span:nth-child(3n + 1):before {
+    background: rgba(134, 255, 0, 1);
+    box-shadow: 0 0 20px rgba(134, 255, 0, 1),
+        0 0 40px rgba(134, 255, 0, 1),
+        0 0 60px rgba(134, 255, 0, 1),
+        0 0 80px rgba(134, 255, 0, 1),
+        0 0 0 8px rgba(134, 255, 0, .1);
+}
+
+.glowing span:nth-child(3n + 2):before {
+    background: rgba(255, 214, 0, 1);
+    box-shadow: 0 0 20px rgba(255, 214, 0, 1),
+        0 0 40px rgba(255, 214, 0, 1),
+        0 0 60px rgba(255, 214, 0, 1),
+        0 0 80px rgba(255, 214, 0, 1),
+        0 0 0 8px rgba(255, 214, 0, .1);
+}
+
+.glowing span:nth-child(3n + 3):before {
+    background: rgba(0, 226, 255, 1);
+    box-shadow: 0 0 20px rgba(0, 226, 255, 1),
+        0 0 40px rgba(0, 226, 255, 1),
+        0 0 60px rgba(0, 226, 255, 1),
+        0 0 80px rgba(0, 226, 255, 1),
+        0 0 0 8px rgba(0, 226, 255, .1);
+}
+
+.glowing span:nth-child(3n + 1) {
+    z-index: -2;
+    animation: animate 10s alternate infinite;
+
+}
+
+.glowing span:nth-child(3n + 2) {
+    z-index: -3;
+    animation: animate-reverse 3s alternate infinite;
+
+}
+
+.glowing span:nth-child(3n + 3) {
+    z-index: -4;
+    animation: animate 8s alternate infinite;
+
+}
+
+@keyframes animate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+@keyframes animate-reverse {
+    0% {
+        transform: rotate(360deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+
+/*
+==========================================
+    Social media links
+==========================================
+*/
+
+.card {
+    position: absolute;
+    border-radius: 25px;
+    background: var(--bgbright);
+
+    display: flex;
+    padding: 20px;
+    box-shadow: 0 0 3vw #2d2d2d;
+    transform: translate(-50%, -50%);
+    top: 50%;
+    left: 50%;
+}
+
+ul {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+ul li {
+    position: relative;
+    list-style: none;
+    width: 12vh;
+    height: 12vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+ul li:hover {
+    z-index: 10000;
+    transform: scale(0.75);
+}
+
+ul li::before {
+    content: '';
+    position: absolute;
+    inset: 2vw;
+
+    transition: 0.5s;
+}
+
+ul li:hover::before {
+    inset: 0px;
+}
+
+ul li::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: var(--bgbright);
+    transform: rotate(45deg);
+}
+
+ul li a {
+    position: relative;
+    text-decoration: none;
+    color: var(--clr);
+    z-index: 10;
+
+    transition: 0.5s;
+}
+
+ul li:hover a {
+
+    filter: drop-shadow(0 0 5vh var(--clr)) drop-shadow(0 0 10vh var(--clr)) drop-shadow(0 0 15vh var(--clr));
+}
