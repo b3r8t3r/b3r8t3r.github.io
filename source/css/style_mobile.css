@@ -1,20 +1,26 @@
+body {
+    display: table-caption;
+}
+
 /*
 ------------------------------------------
   The elements are arranged vertically
 ------------------------------------------
 */
 .card {
-    min-width: 20vw;
-    min-height: 70vh;
+    min-width: 45vw;
+    min-height: 80vh;
 }
 
 ul {
-    top: 33vh;
-    left: 13vw;
+    top: 38vh;
+    left: 28vw;
 }
 
 ul li {
     margin: 5vh 5vh 0 0;
+    width: 10vh;
+    height: 10vh;
 }
 
 ul li::before {
@@ -26,5 +32,5 @@ ul li a {
 }
 
 ul li:hover a {
-    font-size: 13vw;
+    font-size: 15vw;
 }
